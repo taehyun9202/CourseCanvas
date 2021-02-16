@@ -1,0 +1,27 @@
+.header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: #660000;
+    height: 55px;
+    width: calc(100% - 40px);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #FF6600
+}
+
+.login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login input {
+    margin: 0 5px;
+}
+
+.login button {
+    margin-left: 5px;
+}

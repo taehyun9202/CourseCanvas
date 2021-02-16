@@ -1,0 +1,10 @@
+.app {
+  margin-top: 55px;
+  min-height: calc(100vh - 55px);
+  width: calc(100wv - 60px);
+}
+
+.content {
+  display: flex;
+  margin: 0 20px 0 40px;
+}
