@@ -54,6 +54,16 @@ function App() {
             "name": "Tyler Nam",
             "email": "taehyun9202@hotmail.com"
         }
+      },
+      {
+        "_id": "602c856de3997957b8c1d627",
+        "name": "Engl 1024",
+        "capacity": 30,
+        "professor": {
+            "_id": "602c37ac9f377a3a546de58f",
+            "name": "Tyler Nam",
+            "email": "taehyun9202@hotmail.com"
+        },
       }
     ]
   }
