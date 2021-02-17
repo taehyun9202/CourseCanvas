@@ -133,3 +133,13 @@
 .courseModal form button:hover {
     color: white
 }
+
+@media only screen and (max-width: 700px) {
+    .sidebar {
+    transform: translateX(calc(-100% + 50px));
+      width: 100%;
+    }
+    .active {
+        transform: translateX(25px);
+    }
+}

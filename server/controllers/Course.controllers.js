@@ -26,6 +26,14 @@ class CourseController {
             .then(() => res.json({msg: "Deleted "}))
             .catch(err => res.json(err));
     }
+    update(req, res){
+        Course.findOneAndUpdate({_id: req.params._id}, req.body, {runValidators: true, context: 'query'})
+            .then(course => res.json({
+              msg: "Updated",
+              data: course
+            }))
+            .catch(err => res.json(err));
+      }
 }
 
 module.exports = new CourseController()

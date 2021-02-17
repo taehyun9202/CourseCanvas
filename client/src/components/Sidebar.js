@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 import CourseLists from './CourseLists'
 
 function Sidebar(props) {
-    const [ isOpen, setIsOpen ] = useState('active')
+    const [ isOpen, setIsOpen ] = useState('')
     const [ openModal, setOpenModal ] = useState(false)
     const [ user, setUser ] = useState(props.user)
     const [ courseName, setCourseName ] = useState('')
@@ -45,7 +45,6 @@ function Sidebar(props) {
         }
         axios.post('http://localhost:8000/api/Courses', newCourse)
             .then(res => {
-                console.log(res.data)
                 const courseToAdd = {
                     _id: res.data._id,
                     name: res.data.name,
@@ -53,7 +52,6 @@ function Sidebar(props) {
                     professor: res.data.professor
                 }
                 user.courses = [...user.courses, courseToAdd]
-                console.log(user.courses)
                 axios.put(`http://localhost:8000/api/users/${user.id}`, { courses: user.courses })
                     .then(res => console.log(res))
                     .catch(err => console.log(err))

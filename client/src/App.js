@@ -16,44 +16,44 @@ function App() {
     "student": false,
     "courses": [
       {
-          "_id": "602c3c1b9f377a3a546de596",
-          "name": "Math 1104",
-          "capacity": 150,
-          "professor": {
-              "_id": "602c37ac9f377a3a546de58f",
-              "name": "Tyler Nam",
-              "email": "taehyun9202@hotmail.com"
-          }
+        "_id": "602c3c1b9f377a3a546de596",
+        "name": "Math 1104",
+        "capacity": 150,
+        "professor": {
+            "_id": "602c37ac9f377a3a546de58f",
+            "name": "Tyler Nam",
+            "email": "taehyun9202@hotmail.com"
+        }
       },
       {
-          "_id": "602c3c219f377a3a546de597",
-          "name": "Math 2203",
-          "capacity": 40,
-          "professor": {
-              "_id": "602c37ac9f377a3a546de58f",
-              "name": "Tyler Nam",
-              "email": "taehyun9202@hotmail.com"
-          }
+        "_id": "602c3c219f377a3a546de597",
+        "name": "Math 2203",
+        "capacity": 40,
+        "professor": {
+            "_id": "602c37ac9f377a3a546de58f",
+            "name": "Tyler Nam",
+            "email": "taehyun9202@hotmail.com"
+        }
       },
       {
-          "_id": "602c3c689f377a3a546de598",
-          "name": "Math 2204",
-          "capacity": 40,
-          "professor": {
-              "_id": "602c37ac9f377a3a546de58f",
-              "name": "Tyler Nam",
-              "email": "taehyun9202@hotmail.com"
-          }
+        "_id": "602c3c689f377a3a546de598",
+        "name": "Math 2204",
+        "capacity": 40,
+        "professor": {
+            "_id": "602c37ac9f377a3a546de58f",
+            "name": "Tyler Nam",
+            "email": "taehyun9202@hotmail.com"
+        }
       },
       {
-          "_id": "602c3c6f9f377a3a546de599",
-          "name": "Enge 1024",
-          "capacity": 200,
-          "professor": {
-              "_id": "602c37ac9f377a3a546de58f",
-              "name": "Tyler Nam",
-              "email": "taehyun9202@hotmail.com"
-          }
+        "_id": "602c3c6f9f377a3a546de599",
+        "name": "Enge 1024",
+        "capacity": 200,
+        "professor": {
+            "_id": "602c37ac9f377a3a546de58f",
+            "name": "Tyler Nam",
+            "email": "taehyun9202@hotmail.com"
+        }
       }
     ]
   }

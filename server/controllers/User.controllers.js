@@ -110,14 +110,13 @@ class UserController {
   }
 
   update(req, res){
-    User.findOneAndUpdate({_id: req.params._id}, req.body, {runValidators: true, context: 'query'})
+    User.findOneAndUpdate({_id: req.params._id}, req.body)
         .then(() => res.json({
           msg: "Updated ",
           data: res.data
         }))
         .catch(err => res.json(err));
   }
-
 }
 
 module.exports = new UserController();
