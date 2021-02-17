@@ -68,12 +68,6 @@ function StudentLists(props) {
             <div className="list">
                 {studentList?.map(student => (
                     checkEnrollment(student)
-                    // student.courses.map(course => (
-                        // <button className="student" onClick={() => addStudentHandler(student)}>
-                        //         <h5>{student.name}</h5>
-                        //         <p>({student._id})</p>
-                        // </button> 
-                    // ))
                 ))}
             </div>
         </div>
