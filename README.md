@@ -26,3 +26,6 @@ need to work on more model connection
 
 
 ![Alt text](result.PNG?raw=true "Title")
+day 4. student view of canvas
+
+
