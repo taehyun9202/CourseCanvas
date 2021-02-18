@@ -78,7 +78,6 @@ function App() {
       setUser(res.data[0])
     })
   }, [token])
-  
   return (
     <div className="app">
       <Header user={user} />
@@ -91,7 +90,7 @@ function App() {
             exact
             path="/:id"
             render={(props) => (
-              <Course {...props}/>
+              <Course {...props} user={user}/>
             )}
           />
         </Router>
