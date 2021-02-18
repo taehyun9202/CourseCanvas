@@ -12,6 +12,11 @@
     color: #FF6600
 }
 
+a {
+    text-decoration: none;
+    color: #FF6600;
+}
+
 .login {
     display: flex;
     justify-content: space-around;
@@ -24,4 +29,11 @@
 
 .login button {
     margin-left: 5px;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .login input {
+        width: 100px;
+    }
 }

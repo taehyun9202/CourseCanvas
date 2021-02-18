@@ -41,7 +41,7 @@ class UserController {
         token,
         user: {
           id: savedUser.id,
-          userName: savedUser.userName,
+          name: savedUser.name,
           email: savedUser.email,
           student: savedUser.student
         }

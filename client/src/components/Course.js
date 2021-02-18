@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './Course.css'
-import ProfessorCourseGrade from './ProfessorCourseGrade'
+import ProfessorManage from './ProfessorManage'
 import StudentLists from './StudentLists'
 function Course(props) {
     const [ course, setCourse ] = useState(null)
@@ -25,7 +25,7 @@ function Course(props) {
             </div>
             <div className="content">
                 <div className="right">
-                    <ProfessorCourseGrade course={course}/>
+                    <ProfessorManage course={course}/>
                 </div>
                 <div className="left">
                     <StudentLists course={course} />

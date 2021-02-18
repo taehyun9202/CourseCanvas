@@ -16,6 +16,10 @@ const CourseSchema = new mongoose.Schema({
         type : Object,
         ref: 'User'
     }],
+    grade: [{
+        type : Object,
+        ref: 'Grade'
+    }]
 })
 
 

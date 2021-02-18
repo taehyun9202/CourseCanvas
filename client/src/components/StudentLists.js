@@ -20,7 +20,14 @@ function StudentLists(props) {
         const userToAdd = {
             _id: student._id,
             name: student.name,
-            email: student.email
+            email: student.email,
+            grade: {
+                attendence: 0,
+                quiz: 0,
+                project: 0,
+                midterm: 0,
+                final: 0
+            }
         }
         const courseStudent = [...props.course.students, userToAdd]
         axios.put(`http://localhost:8000/api/courses/${props.course?._id}`, { students: courseStudent })
@@ -31,7 +38,14 @@ function StudentLists(props) {
         const courseToAdd = {
             _id: props.course?._id,
             name: props.course?.name,
-            professor: props.course?.professor
+            professor: props.course?.professor,
+            grade: {
+                attendence: 0,
+                quiz: 0,
+                project: 0,
+                midterm: 0,
+                final: 0
+            }
         }
         const studentCouorse = [...student.courses, courseToAdd]
         console.log(studentCouorse)
@@ -52,7 +66,7 @@ function StudentLists(props) {
             }
         })
         if (enrolled === false) {
-            return  <button className="student" onClick={() => addStudentHandler(student)}>
+            return  <button className="studentList_student" onClick={() => addStudentHandler(student)}>
                         <h5>{student.name}</h5>
                         <p>({student._id})</p>
                     </button>
@@ -65,7 +79,7 @@ function StudentLists(props) {
     return (
         <div className="studentLists">
             <h5>Add students to {props.course?.name}</h5>
-            <div className="list">
+            <div className="studentlist_list">
                 {studentList?.map(student => (
                     checkEnrollment(student)
                 ))}

@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require("cors")
 const bodyParser = require('body-parser')
 const port = 8000;
-const db_name = "course"
+const db_name = "courseCanvas"
 const app = express()
 
 // bodyparser middleware

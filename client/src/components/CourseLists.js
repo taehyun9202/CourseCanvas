@@ -3,9 +3,16 @@ import React from 'react'
 function CourseLists(props) {
     return (
         <div>
-            {props.user.courses.map(course => (
+            {props.courses.map(course => (
                 <div>
-                    <a href={`/${course._id}`}>{course.name}</a>
+                    <a 
+                        href={`/${course._id}`}
+                        style={{
+                            color: "#660000",
+                            fontSize: "18px",
+                            fontWeight: "700"
+                        }}
+                    >{course.name}</a>
                 </div>
             ))}
         </div>

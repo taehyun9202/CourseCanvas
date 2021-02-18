@@ -5,16 +5,19 @@ import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import Modal from 'react-modal'
 import CloseIcon from '@material-ui/icons/Close';
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
 import CourseLists from './CourseLists'
+import { useHistory } from 'react-router-dom'
 
 function Sidebar(props) {
-    const [ isOpen, setIsOpen ] = useState('')
+    const [ isOpen, setIsOpen ] = useState('active')
     const [ openModal, setOpenModal ] = useState(false)
-    const [ user, setUser ] = useState(props.user)
     const [ courseName, setCourseName ] = useState('')
     const [ courseCapacity, setCourseCapacity ] = useState(0)
     const history = useHistory();
+    const [ name, setName ] = useState('')
+    const [ password, setPassword ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ isSelected, setIsSelected ] = useState(true)
 
     function openModalHandler() {
         setOpenModal(true);
@@ -32,15 +35,30 @@ function Sidebar(props) {
         }
     }
 
+    const onChangeHandler = () => {
+        setIsSelected(!isSelected)
+    }
+
+    const register = e => {
+        e.preventDefault()
+        const usertoLogin = { name: name, email: email, password: password, student: isSelected }
+        axios.post('http://localhost:8000/api/signup', usertoLogin)
+        .then(res => {
+                console.log(res.data)
+                localStorage.setItem('id', res.data.user.id)
+                localStorage.setItem('token', res.data.token)
+            })
+        .catch(err => console.log(err))
+    }
     const createCourse = e => {
         e.preventDefault()
         const newCourse = {
             name : courseName,
             capacity : courseCapacity,
             professor: {
-                _id: user.id,
-                name: user.name,
-                email: user.email
+                _id: props.user._id,
+                name: props.user.name,
+                email: props.user.email
             }
         }
         axios.post('http://localhost:8000/api/Courses', newCourse)
@@ -51,23 +69,58 @@ function Sidebar(props) {
                     capacity: res.data.capacity,
                     professor: res.data.professor
                 }
-                user.courses = [...user.courses, courseToAdd]
-                axios.put(`http://localhost:8000/api/users/${user.id}`, { courses: user.courses })
+                console.log(props.user.courses)
+                props.user.courses = [...props.user.courses, courseToAdd]
+                console.log(props.user.courses)
+                axios.put(`http://localhost:8000/api/users/${props.user._id}`, { courses: props.user.courses })
                     .then(res => console.log(res))
                     .catch(err => console.log(err))
             })
             .catch(err => console.log(err))
-        
+        setCourseName('')
+        setCourseCapacity(0)
+    }
+
+    const renderCreateCourse = () => {
+        if (props.user && !props.user.student) {
+            return (
+                <button onClick={openModalHandler}>Create Course</button>
+            )
+        }
     }
     return (
         <div className={`sidebar ${isOpen}`}>
             <div className="courseList">
-                <div className="courses">
-                    <h3>{user.name}</h3>
-                    <CourseLists user={user} />
-                </div>
+                {props.user ? 
+                    <div className="courses">
+                        <h3>{props.user.name}</h3> 
+                        <CourseLists courses={props.user.courses} />
+                    </div> :
+                    <div className="registerform">
+                        <h3>Register</h3>
+                        <form onSubmit={register}>
+                            <div>
+                                <label>Student?</label>
+                                <input type="checkbox" checked={isSelected} onChange={onChangeHandler} />
+                            </div>
+                            <div>
+                                <label>Name</label>
+                                <input type="text" value={name} onChange={e => setName(e.target.value)} />
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                            </div>
+                            <button className="registerButton">Register</button>
+                        </form>
+                    </div>
+                }
                 <div className="createCourse">
-                    <button onClick={openModalHandler}>Create Course</button>
+                    {renderCreateCourse()}
                 </div>
             </div>
             <div className="open" onClick={ClickHander}>

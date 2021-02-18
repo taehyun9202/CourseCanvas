@@ -1,12 +1,5 @@
 const mongoose = require("mongoose");
 const GradeSchema = new mongoose.Schema({
-    course: {
-        type: String,
-        required: true
-    },
-    student: {
-        ref: 'User'
-    },
     attendence: {
         type: Number,
         min: 0,

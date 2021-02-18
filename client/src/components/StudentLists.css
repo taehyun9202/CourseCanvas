@@ -2,13 +2,13 @@
     width: 100%;
 }
 
-.list {
+.studentlist_list {
     height: 250px;
     overflow-y: scroll;
     border: 1px solid black;
 }
 
-.student {
+.studentList_student {
     border: 1px solid black;
     height: 30px;
     margin: 0;
@@ -17,11 +17,11 @@
     cursor: pointer;
 }
 
-.student h5 {
+.studentList_student h5 {
     margin-top: 0px;
 }
 
-.student p {
+.studentList_student p {
     font-size: 10px;
     margin-top: -15px;
 }
