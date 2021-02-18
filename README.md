@@ -16,3 +16,10 @@ day 1. built models and few front end. having difficult in connectecting course 
 ![Alt Text](https://media.giphy.com/media/mGvJ2qPal10cAecuwC/giphy.gif)
 
 day 2. interaction between course and user(students, professor)
+
+
+![Alt Text](https://media.giphy.com/media/7LHNto7UXUaQdL7YPD/giphy.gif)
+
+day 3. finished login registration and grade update.
+Had problem with user model and course model 
+need to work on more model connection
